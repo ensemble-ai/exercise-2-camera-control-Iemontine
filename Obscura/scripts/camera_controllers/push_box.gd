@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	var tpos = target.global_position
 	var cpos = global_position
 	
-	#boundary checks
+	# Boundary checks
 	#left
 	var diff_between_left_edges = (tpos.x - target.WIDTH / 2.0) - (cpos.x - box_width / 2.0)
 	if diff_between_left_edges < 0:
