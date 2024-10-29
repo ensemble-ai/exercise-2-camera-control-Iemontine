@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://88du8yjefx8j"]
+[gd_scene load_steps=13 format=4 uid="uid://88du8yjefx8j"]
 
 [ext_resource type="PackedScene" uid="uid://dtm13sp1jsrwi" path="res://scenes/vessel.tscn" id="1_oaql3"]
 [ext_resource type="Script" path="res://scripts/camera_selector.gd" id="2_qffo5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/camera_controllers/position_lock.gd" id="4_ru2ho"]
 [ext_resource type="AudioStream" uid="uid://6tbtl0jk0dlo" path="res://assets/audio/VGMA Challenge - July 16th.wav" id="5_o8tm3"]
 [ext_resource type="Script" path="res://scripts/camera_controllers/framed_with_autoscroll.gd" id="6_s4f47"]
+[ext_resource type="Script" path="res://scripts/camera_controllers/position_lock_lerp.gd" id="7_jrtoi"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3k4ut"]
 _surfaces = [{
@@ -43,7 +44,7 @@ terrain_manager = NodePath("../TerrainManager")
 
 [node name="CameraSelector" type="Node" parent="." node_paths=PackedStringArray("cameras")]
 script = ExtResource("2_qffo5")
-cameras = [NodePath("../PositionLockCamera"), NodePath("../AutoScrollCamera"), NodePath("../PushBoxCamera2"), NodePath("../PushBoxCamera3")]
+cameras = [NodePath("../PushBoxCamera3"), NodePath("../PositionLockCamera"), NodePath("../AutoScrollCamera"), NodePath("../PositionLockLerpCamera")]
 
 [node name="PositionLockCamera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_ttnp6")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 30, 0)
@@ -70,12 +71,15 @@ offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("3_4fllx")
 
-[node name="PushBoxCamera2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_ttnp6")]
+[node name="PositionLockLerpCamera" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_ttnp6")]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 30, 0)
+script = ExtResource("7_jrtoi")
+follow_speed = 75.0
+catchup_speed = 400.0
+leash_distance = 50.0
 target = NodePath("../Vessel")
-dist_above_target = 20.0
 
-[node name="debug" type="Label" parent="PushBoxCamera2"]
+[node name="debug" type="Label" parent="PositionLockLerpCamera"]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
