@@ -75,7 +75,7 @@ script = ExtResource("3_4fllx")
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 30, 0)
 script = ExtResource("7_jrtoi")
 follow_speed = 75.0
-catchup_speed = 400.0
+catchup_speed = 20.0
 leash_distance = 50.0
 target = NodePath("../Vessel")
 
