@@ -36,7 +36,6 @@ func _physics_process(delta: float) -> void:
 	
 	var target_velocity: Vector3 = target.velocity
 	var target_position = target.global_position
-	#var relative_position = target_position - global_position
 
 	if target_velocity.length() < 0.1:
 		if !catchup_timer.is_stopped():
