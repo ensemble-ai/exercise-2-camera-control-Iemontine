@@ -59,7 +59,8 @@ func _process(delta: float) -> void:
 	if (tpos.z + target.HEIGHT / 2.0) > cpos.z + bottom_right.y:
 		tpos.z = cpos.z + bottom_right.y - target.HEIGHT / 2.0
 
-	target.global_position = tpos
+	# Ensure the target moves relative to the frame bounds
+	target.global_position = tpos + Vector3(autoscroll_speed.x * delta, 0, autoscroll_speed.z * delta)
 
 	super(delta)
 

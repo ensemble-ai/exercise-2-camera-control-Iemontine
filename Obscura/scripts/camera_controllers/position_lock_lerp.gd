@@ -2,9 +2,9 @@ class_name PositionLockLerp
 extends CameraControllerBase
 
 
-@export var follow_speed: float = 5.0
-@export var catchup_speed: float = 10.0
-@export var leash_distance: float = 15.0	# Maximum allowed distance between camera and target
+@export var follow_speed: float = 25.0
+@export var catchup_speed: float = 30.0
+@export var leash_distance: float = 15.25	# Maximum allowed distance between camera and target
 var current_speed: float = follow_speed
 
 func _ready() -> void:
@@ -26,8 +26,8 @@ func _physics_process(delta: float) -> void:
 		return
 		
 	var target_position = target.global_position
-	var relative_position = target_position - global_position
-	var target_distance_from_center = relative_position.length() + relative_position.y
+	#var relative_position = target_position - global_position
+	#var target_distance_from_center = relative_position.length() + relative_position.y
 
 	var speed: float
 	if target.velocity.length() < 0.1:

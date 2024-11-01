@@ -2,6 +2,7 @@
 class_name TerrainManager
 extends MeshInstance3D
 
+
 @export var noise_seed:int = 1337 :
 	set(value):
 		noise_seed = value

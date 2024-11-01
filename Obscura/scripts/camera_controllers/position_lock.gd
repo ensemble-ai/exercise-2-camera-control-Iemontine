@@ -4,7 +4,7 @@ extends CameraControllerBase
 
 func _ready() -> void:
 	super()
-	# position = target.position
+	position = target.position
 
 
 func _process(delta: float) -> void:
