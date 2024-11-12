@@ -87,15 +87,20 @@ again to make the box always fit the screen regardless of the zoom in or zoom ou
 I could not find any major infractions through the code.
 
 #### Style Guide Exemplars ####
-
+I noticed that they always used snake case for naming their variables, as well as always using pascal case for class names and scene names.
+A great example of this is in the [fourway_pushzone](https://github.com/ensemble-ai/exercise-2-camera-control-Iemontine/blob/a397c2b1a613bff6a799a2e8a4b498ef2c2dbb38/Obscura/scripts/camera_controllers/fourway_pushzone.gd#L1)
+and honestly all of the scripts that were written. This one just specifically has the most variables. 
 
 ### Best Practices Review ###
 
 
 #### Best Practices Infractions ####
 
-
+There could be more uses of comments throughout the code. There are a couple but not enough to really get what's happening unless you know it. I had a lot of trouble reading the raycasting sections
+since it was something I wasn't familiar with and made it difficult to see how things worked.
 
 #### Best Practices Exemplars ####
 
+There are a couple of comments here and there, such as in the variables at the top or what some lines of code are doing, such as [here](https://github.com/ensemble-ai/exercise-2-camera-control-Iemontine/blob/a397c2b1a613bff6a799a2e8a4b498ef2c2dbb38/Obscura/scripts/camera_controllers/fourway_pushzone.gd#L31) and [here](https://github.com/ensemble-ai/exercise-2-camera-control-Iemontine/blob/a397c2b1a613bff6a799a2e8a4b498ef2c2dbb38/Obscura/scripts/camera_controllers/target_focus.gd#L5). With some more comments it would be great.
+Using the raycasting itself was really impressive since there's just so much code that was used and knowing how it all worked must have taken a long time to complete.
 
